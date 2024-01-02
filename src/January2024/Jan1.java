@@ -38,13 +38,15 @@ public class Jan1 {
                 if (s1.charAt(0) != s2.charAt(2) || s1.charAt(2) != s2.charAt(0)) {
                     return false;
                 }
-            } else if (s1.charAt(0) != s2.charAt(0) && s1.charAt(2) == s2.charAt(2) || s1.charAt(0) == s2.charAt(0) && s1.charAt(2) != s2.charAt(2)) {
+            } else if (s1.charAt(0) != s2.charAt(0) && s1.charAt(2) == s2.charAt(2) || s1.charAt(0) == s2.charAt(0)
+                    && s1.charAt(2) != s2.charAt(2)) {
                 return false;
             }
             if (s1.charAt(1) != s2.charAt(1) && s1.charAt(3) != s2.charAt(3)) {
                 return s1.charAt(1) == s2.charAt(3) && s1.charAt(3) == s2.charAt(1);
             } else
-                return (s1.charAt(1) != s2.charAt(1) || s1.charAt(3) == s2.charAt(3)) && (s1.charAt(1) == s2.charAt(1) || s1.charAt(3) != s2.charAt(3));
+                return (s1.charAt(1) != s2.charAt(1) || s1.charAt(3) == s2.charAt(3)) && (s1.charAt(1) == s2.charAt(1)
+                        || s1.charAt(3) != s2.charAt(3));
         }
         return false;
     }
