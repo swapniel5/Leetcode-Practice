@@ -1,0 +1,61 @@
+31. Next Permutation                Medium                            Solved
+
+A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
+
+For example, for arr = [1,2,3], the following are all the permutations of arr: [1,2,3], [1,3,2], [2, 1, 3], [2, 3, 1], [3,1,2], [3,2,1].
+The next permutation of an array of integers is the next lexicographically greater permutation of its integer. More formally, if all the permutations of the array are sorted in one container according to their lexicographical order, then the next permutation of that array is the permutation that follows it in the sorted container. If such arrangement is not possible, the array must be rearranged as the lowest possible order (i.e., sorted in ascending order).
+
+For example, the next permutation of arr = [1,2,3] is [1,3,2].
+Similarly, the next permutation of arr = [2,3,1] is [3,1,2].
+While the next permutation of arr = [3,2,1] is [1,2,3] because [3,2,1] does not have a lexicographical larger rearrangement.
+Given an array of integers nums, find the next permutation of nums.
+
+The replacement must be in place and use only constant extra memory.
+
+Example 1:
+
+Input: nums = [1,2,3]
+Output: [1,3,2]
+Example 2:
+
+Input: nums = [3,2,1]
+Output: [1,2,3]
+Example 3:
+
+Input: nums = [1,1,5]
+Output: [1,5,1]
+
+Constraints:
+
+1 <= nums.length <= 100
+0 <= nums[i] <= 100
+
+Explaination:
+#### `nextPermutation` Method:
+1. **Initialize `i`:** Start from the second-to-last element of the array (`nums.length - 2`) and find the first pair (a[i], a[i+1]) such that `a[i] < a[i+1]`. This loop finds the first element where the sequence is not in descending order.
+
+2. **Check if `i` is valid:** If `i` is greater than or equal to 0, it means such a pair was found.
+
+3. **Find `j`:** Find the smallest element in the subarray to the right of `a[i]` and greater than `a[i]`. This loop finds the rightmost element greater than `a[i]`.
+
+4. **Swap `a[i]` and `a[j]`:** Swap `a[i]` with the smallest element found (`a[j]`).
+
+5. **Reverse the subarray:** Reverse the subarray to the right of `a[i]` to get the next lexicographically greater permutation.
+
+#### `swap` Method:
+- A simple method to swap two elements in the array.
+
+#### `reverse` Method:
+- Reverses the subarray starting from the given `start` index.
+
+#### `main` Method:
+- Demonstrates the use of `nextPermutation` with different input arrays.
+- Prints the original and next permutations.
+
+### Output Explanation:
+
+1. For the input array `[1, 2, 3]`, the next permutation is `[1, 3, 2]`.
+2. For the input array `[3, 2, 1]`, the next permutation is `[1, 2, 3]`.
+3. For the input array `[1, 1, 5]`, the next permutation is `[1, 5, 1]`.
+
+The program follows the logic of finding the next lexicographically greater permutation in-place and demonstrates the result for various cases.

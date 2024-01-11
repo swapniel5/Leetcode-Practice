@@ -1,4 +1,4 @@
-package January2024;
+package com.leetcode.practice.January2024;
 
 /*
 * TODO 20. Valid Parentheses

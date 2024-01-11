@@ -1,4 +1,4 @@
-package January2024;
+package com.leetcode.practice.January2024;
 
 /*
 TODO: 2839. Check if Strings Can be Made Equal With Operations I

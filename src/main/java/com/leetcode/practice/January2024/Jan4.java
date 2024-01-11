@@ -1,4 +1,4 @@
-package January2024;
+package com.leetcode.practice.January2024;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
