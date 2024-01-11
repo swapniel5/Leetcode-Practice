@@ -1,4 +1,4 @@
-package January2024;
+package com.leetcode.practice.testcases;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ public class Jan1Test {
     public void test_equalStrings() {
         String s1 = "abcd";
         String s2 = "abcd";
-        boolean result = Jan1.canBeEqual(s1, s2);
+        boolean result = January2024.Jan1.canBeEqual(s1, s2);
         assertTrue(result);
     }
 
@@ -20,7 +20,7 @@ public class Jan1Test {
     public void test_swappedStrings() {
         String s1 = "abcd";
         String s2 = "cdab";
-        boolean result = Jan1.canBeEqual(s1, s2);
+        boolean result = January2024.Jan1.canBeEqual(s1, s2);
         assertTrue(result);
     }
 
@@ -29,7 +29,7 @@ public class Jan1Test {
     public void test_multipleSwaps() {
         String s1 = "abcd";
         String s2 = "dcba";
-        boolean result = Jan1.canBeEqual(s1, s2);
+        boolean result = January2024.Jan1.canBeEqual(s1, s2);
         assertFalse(result);
     }
 
@@ -38,7 +38,7 @@ public class Jan1Test {
     public void test_differentLengths() {
         String s1 = "abcd";
         String s2 = "abcde";
-        boolean result = Jan1.canBeEqual(s1, s2);
+        boolean result = January2024.Jan1.canBeEqual(s1, s2);
         assertFalse(result);
     }
 
@@ -47,7 +47,7 @@ public class Jan1Test {
     public void test_differentPositions() {
         String s1 = "abcd";
         String s2 = "cdba";
-        boolean result = Jan1.canBeEqual(s1, s2);
+        boolean result = January2024.Jan1.canBeEqual(s1, s2);
         assertFalse(result);
     }
 
@@ -56,7 +56,7 @@ public class Jan1Test {
     public void test_differentCharacters() {
         String s1 = "abcd";
         String s2 = "efgh";
-        boolean result = Jan1.canBeEqual(s1, s2);
+        boolean result = January2024.Jan1.canBeEqual(s1, s2);
         assertFalse(result);
     }
 
