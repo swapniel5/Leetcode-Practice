@@ -10,36 +10,31 @@ public class Jan13 {
     }
 
     public static int evalRPN(String[] tokens) {
-        Stack<String> stack = new Stack<>();
-        int result = 0;
+        Stack<Integer> stack = new Stack<>();
+
         for (String token : tokens) {
-            if (!Objects.equals(token, "+")
-                    && !Objects.equals(token, "-")
-                    && !Objects.equals(token, "*")
-                    && !Objects.equals(token, "/")) {
-                stack.push(token);
+            if (isOperand(token)) {
+                stack.push(Integer.parseInt(token));
             } else {
-                result = operation(token, stack);
-                stack.push(String.valueOf(result));
+                int num2 = stack.pop();
+                int num1 = stack.pop();
+                stack.push(performOperation(token, num1, num2));
             }
         }
-        if (!stack.isEmpty())
-            result = Integer.parseInt(stack.pop());
-        return result;
+        return stack.pop();
     }
 
-    private static int operation(String token, Stack<String> stack) {
-        int result = 0;
-        Integer num2 = Integer.parseInt(stack.pop());
-        Integer num1 = Integer.parseInt(stack.pop());
-        result = switch (token) {
+    private static boolean isOperand(String token) {
+        return !token.equals("+") && !token.equals("-") && !token.equals("*") && !token.equals("/");
+    }
+
+    private static int performOperation(String operator, int num1, int num2) {
+        return switch (operator) {
             case "+" -> num1 + num2;
             case "-" -> num1 - num2;
             case "*" -> num1 * num2;
             case "/" -> num1 / num2;
-            default -> result;
+            default -> throw new IllegalArgumentException("Invalid operator: " + operator);
         };
-        return result;
     }
-
 }
