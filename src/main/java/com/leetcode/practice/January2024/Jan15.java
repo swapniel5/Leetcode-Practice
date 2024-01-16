@@ -25,37 +25,38 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 */
 
 public class Jan15 {
-   public static boolean isPalindrome(String s) {
-        
-    int i = 0;
-    int j = s.length() - 1;
-    while (i < j) {
-        
-        char start = s.charAt(i);
-        char end = s.charAt(j);
-        
-        if (!Character.isLetterOrDigit(start)) {
+    public static boolean isPalindrome(String s) {
+
+        int i = 0;
+        int j = s.length() - 1;
+        while (i < j) {
+
+            char start = s.charAt(i);
+            char end = s.charAt(j);
+
+            if (!Character.isLetterOrDigit(start)) {
+                i++;
+                continue;
+            }
+
+            if (!Character.isLetterOrDigit(end)) {
+                j--;
+                continue;
+            }
+
+            if (Character.toLowerCase(start) != Character.toLowerCase(end)) {
+                return false;
+            }
+
             i++;
-            continue;
-        }
-        
-        if (!Character.isLetterOrDigit(end)) {
             j--;
-            continue;
         }
-        
-        if (Character.toLowerCase(start) != Character.toLowerCase(end)) {
-            return false;
-        }
-        
-        i++;
-        j--;    
+
+        return true;
     }
-    
-    return true;
-}
+
     public static void main(String[] args) {
-        String polishNotationArray = "A man, a plan, a canal: Panama";
+        String polishNotationArray = "race a car";
         System.out.println("Valid Palindrome or not: " + isPalindrome(polishNotationArray));
     }
 }
