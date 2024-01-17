@@ -48,6 +48,7 @@ public class Jan16 {
     public static void main(String[] args) {
         int[] numbers = {2,3,4};
         int target = 6;
-        System.out.println(" " + Arrays.toString(twoSum(numbers, target)));
+        int[] results = twoSum(numbers, target);
+        System.out.println(" " + Arrays.toString(results));
     }
 }
